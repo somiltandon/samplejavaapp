@@ -5,13 +5,13 @@ pipeline {
 	   steps {
                 echo 'compiling..'
 		git url: 'https://github.com/lerndevops/DevOpsClassCodes'
-		sh script: '/opt/apache-maven-3.8.3/bin/mvn compile'
+		sh script: '/opt/apache-maven-3.8.4/bin/mvn compile'
            }
         }
         stage('codereview-pmd') {
 	   steps {
                 echo 'codereview..'
-		sh script: '/opt/apache-maven-3.8.3/bin/mvn -P metrics pmd:pmd'
+		sh script: '/opt/apache-maven-3.8.4/bin/mvn -P metrics pmd:pmd'
            }
 	   post {
                success {
